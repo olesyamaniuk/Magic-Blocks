@@ -21,20 +21,19 @@ document.addEventListener('DOMContentLoaded', () => {
   );
 });
 
-const reviewsList = document.querySelector('.reviews-list');
 
-if (window.innerWidth > 1200) {
-  reviewsList.classList.add('reviews-list-desk');
-}
+function toggleAnswer(element) {
+  const answer = element.nextElementSibling;
+  const buttonImg = element.querySelector(".toggle-button img"); 
 
-window.addEventListener('resize', () => {
-  if (window.innerWidth > 1200) {
-    reviewsList.classList.add('reviews-list-desk');
+  if (answer.style.display === "none" || answer.style.display === "") {
+    answer.style.display = "block";
+    buttonImg.src = "/img/faq/icon close.png"; 
   } else {
-    reviewsList.classList.remove('reviews-list-desk');
+    answer.style.display = "none";
+    buttonImg.src = "/img/faq/icon open.png"; 
   }
-})
-
+}
 
 
 
